@@ -17,3 +17,10 @@ function(list_all_sources OUT_SRC)
     set (${OUT_SRC} ${_SOURCES})
     return (PROPAGATE ${OUT_SRC})
 endfunction()
+
+# Searches for files with provided pattern recursively
+function(list_all_sources_rec OUT_SRC)
+    file (GLOB_RECURSE _SOURCES ${ARGN})
+    set (${OUT_SRC} ${_SOURCES})
+    return (PROPAGATE ${OUT_SRC})
+endfunction()
